@@ -1,0 +1,6 @@
+@RecetarioApi_HostAddress = http://localhost:5062
+
+GET {{RecetarioApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

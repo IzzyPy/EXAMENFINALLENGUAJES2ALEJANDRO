@@ -1,0 +1,178 @@
+﻿:root {
+    --bg: #5bc0de; /* Fondo principal oscuro (azul cian) */
+    --card-bg: #2d2d2d; /* Fondo de tarjetas más claro que el fondo principal */
+    --primary: #5bc0de; /* Azul cian (ideal para fondo oscuro) */
+    --accent: #ffb84d; /* Naranja claro */
+    --muted: #f0f0f0; /* Gris claro para texto secundario */
+    --shadow: 0 6px 18px rgba(0,0,0,0.4);
+    --radius: 12px;
+    /* Variables para el botón de búsqueda/principal (Alto contraste NARANJA) */
+    --btn-primary-bg: var(--accent);
+    --btn-primary-hover-bg: #ff9800; /* Naranja más oscuro al pasar el ratón */
+}
+
+body {
+    background: linear-gradient(180deg, #090b5e 0%, var(--bg) 100%); /* Degradado oscuro */
+    color: #f0f0f0; /* Color de texto base claro */
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Encabezado */
+.app-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 1rem;
+}
+
+.app-title {
+    margin: 0;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: -0.5px;
+    font-size: 1.75rem;
+}
+
+.app-subtitle {
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+/* Formulario */
+.form-card {
+    background: var(--card-bg); /* Fondo de tarjeta oscuro */
+    border: 1px solid rgba(255,255,255,0.1); /* Borde claro */
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+    .form-card .card-body {
+        padding: 1.25rem;
+    }
+
+/* Inputs con estilos suaves */
+.form-control {
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.15); /* Borde claro */
+    box-shadow: none;
+    background-color: #383838; /* Fondo del input más oscuro */
+    color: #f0f0f0; /* Texto del input claro */
+    transition: box-shadow .15s ease, border-color .15s ease;
+}
+
+    .form-control:focus {
+        border-color: var(--primary);
+        box-shadow: 0 0 0 0.15rem rgba(91,192,222,0.3); /* Sombra de enfoque clara */
+        background-color: #383838;
+    }
+
+/* Barra de filtros */
+.filter-bar .form-control {
+    min-width: 0;
+}
+
+/* --- Botón de Búsqueda / Principal (ESTILO NARANJA RESALTANTE) --- */
+/* Reemplazar el bloque .btn-primary existente por este */
+.btn-primary {
+    background: linear-gradient(90deg, var(--primary) 0%, #0a88b3 100%);
+    border: none;
+    color: #ffffff;
+    font-weight: 700;
+    border-radius: 8px;
+    padding: .375rem .75rem;
+    box-shadow: 0 8px 22px rgba(10,136,179,0.18);
+    transition: transform .12s ease, box-shadow .12s ease, opacity .12s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+    /* Hover / foco */
+    .btn-primary:hover,
+    .btn-primary:focus {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 32px rgba(10,136,179,0.22);
+        background: linear-gradient(90deg, #078fb2 0%, #056f93 100%);
+        opacity: 0.98;
+        outline: none;
+    }
+
+
+    /* Estado activo */
+    .btn-primary:active {
+        transform: translateY(0);
+        box-shadow: 0 6px 14px rgba(10,136,179,0.14);
+        opacity: 0.95;
+    }
+
+    /* Variante pequeña conserva tamaño */
+    .btn-primary.btn-sm {
+        padding: .25rem .5rem;
+        font-weight: 600;
+        font-size: .9rem;
+    }
+.btn-outline-secondary {
+    background: linear-gradient(90deg, #ffb84d, #ff9800);
+    border-color: rgba(0,0,0,0.1);
+    color: #111; /* Texto oscuro para el botón activo */
+    box-shadow: 0 6px 18px rgba(255,152,0,0.3);
+}
+
+/* Tarjetas de receta */
+.recipe-card {
+    background-color: var(--card-bg); /* Fondo de tarjeta oscuro */
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.08); /* Borde claro */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    overflow: hidden;
+}
+
+    .recipe-card .card-body {
+        padding: 1rem;
+    }
+
+.recipe-title {
+    font-weight: 600;
+    color: #ffffff; /* Título claro */
+}
+
+/* Favorito */
+.btn-fav {
+    border-radius: 8px;
+    transition: transform .08s ease, box-shadow .08s ease;
+}
+
+    .btn-fav:hover {
+        transform: translateY(-1px);
+    }
+
+    .btn-fav.active {
+        background: linear-gradient(90deg, #ffb84d, #ff9800);
+        border-color: rgba(0,0,0,0.1);
+        color: #111; /* Texto oscuro para el botón activo */
+        box-shadow: 0 6px 18px rgba(255,152,0,0.3);
+    }
+
+/* Botones pequeños */
+.btn-sm {
+    padding: .25rem .5rem;
+    font-size: .85rem;
+}
+
+/* Lista de pasos con menor margen */
+.recipe-card ol {
+    margin: .25rem 0 .6rem 1.2rem;
+    padding: 0;
+}
+
+/* Responsive tweaks */
+@media (max-width: 576px) {
+    .app-title {
+        font-size: 1.25rem;
+    }
+
+    .recipe-card {
+        margin-bottom: .75rem;
+    }
+}

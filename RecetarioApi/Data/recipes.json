@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "titulo": "robert",
+    "ingredientes": [
+      "caca",
+      "popo"
+    ],
+    "pasos": [
+      "hacer",
+      "popo"
+    ],
+    "categoria": "ba\u00F1o",
+    "favorito": true
+  }
+]
